@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+
+// Guest routes...
+Route::middleware('guest')
+    ->group(function () {
+        Route::get('/', function () {
+            return view('auth.login');
+        });
+    });
+
+// Auth routes...
+Route::middleware(['auth', 'verified'])
+    ->group(function () {
+        // Dashboard routes...
+        Route::name('dashboard.')
+            ->prefix('dashboard')
+            ->group(function () {
+                Route::get('/', [DashboardController::class, 'index'])->name('index');
+            });
+    });
