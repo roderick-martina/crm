@@ -30,7 +30,7 @@ const path = require("path");
  |
  */
 
-const domain = 'laravel-vuejs-boilerplate.test';
+const domain = 'crm.test';
 
 // The mix script:
 mix.browserSync({
