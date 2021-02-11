@@ -16,6 +16,7 @@ module.exports = {
                 black: '#181818',
                 'black-light': '#333',
                 'cool-gray': colors.coolGray,
+                primary: '#07f',
             },
             backgroundColor: {
                 primary: '#07f',

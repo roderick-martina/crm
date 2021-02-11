@@ -51,3 +51,13 @@ mix.postCss("resources/css/app.css", "public/css", [
     .js("resources/js/app.js", "public/js")
     .vue({version: 2});
 
+mix.webpackConfig(webpack => {
+    return {
+        resolve: {
+            extensions: [".js", ".json", ".vue"],
+            alias: {
+                "@": path.join(__dirname, "./resources/js/"),
+            }
+        }
+    }
+})
