@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use Inertia\Middleware;
 
@@ -39,6 +40,23 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request)
     {
         $routeName = explode('/', URL::current());
+        $translatedNames = [
+            'dashboard' => 'dashboard',
+            'projects' => 'projecten',
+            'tickets' => 'tickets',
+            'invoices' => 'facturen',
+            'academy' => 'Academy',
+            'settings' => 'instellingen',
+            'profile' => 'profiel',
+        ];
+        $currentRouteName = '';
+        $currentRouteNameTranslated = '';
+        if(isset($routeName[3])) {
+            $currentRouteName = $routeName[3];
+            if(isset($translatedNames[$routeName[3]])) {
+                $currentRouteNameTranslated = $translatedNames[$routeName[3]];
+            }
+        }
         return array_merge(parent::share($request), [
             // Lazily
             'auth' => function () {
@@ -49,7 +67,9 @@ class HandleInertiaRequests extends Middleware
                     ] : null
                 ];
             },
-            'route_name' => isset($routeName[3]) ? $routeName[3] : '',
+            'parent_route_name' => $currentRouteName,
+            'parent_route_name_translated' => $currentRouteNameTranslated,
+            'route' => Route::getCurrentRoute()->uri()
         ]);
     }
 }

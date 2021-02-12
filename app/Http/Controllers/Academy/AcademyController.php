@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Academy;
 
 use App\Http\Controllers\Controller;
-use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class DashboardController extends Controller
+class AcademyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Dashboard/index');
+        return Inertia::render('Academy/index');
     }
 
     /**

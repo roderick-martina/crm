@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "title": "Overzicht",
+            "href": "/dashboard"
+        },
+        {
+            "title": "Taken",
+            "href": "/dashboard/tasks"
+        },
+        {
+            "title": "Activiteiten",
+            "href": "/dashboard/activity"
+        }
+    ]
+}

@@ -2,8 +2,9 @@
     <!-- Narrow sidebar-->
     <nav aria-label="Sidebar" class="hidden md:block md:flex-shrink-0 md:bg-gray-800 md:overflow-y-auto">
         <div class="relative w-44 flex flex-col p-3 space-y-3">
-            <inertia-link href="#"
-                          class="bg-gray-900 text-white flex-shrink-0 flex inline-flex items-center justify-left h-14 w-full pl-4 rounded-lg"
+            <inertia-link href="/dashboard"
+                          class="flex-shrink-0 flex inline-flex items-center justify-left h-14 w-full pl-4 rounded-lg"
+                          :class="title === 'dashboard' ? 'bg-gray-900 text-white' : 'text-gray-400 hover:bg-gray-700'"
             >
                 <span class="sr-only">Dashboard</span>
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -14,8 +15,10 @@
                 <span class="ml-3">Dashboard</span>
             </inertia-link>
 
-            <inertia-link href="#"
-                          class="text-gray-400 hover:bg-gray-700 flex flex-shrink-0 inline-flex items-center justify-left h-14 w-full pl-4 rounded-lg">
+            <inertia-link href="/projects"
+                          class=" flex flex-shrink-0 inline-flex items-center justify-left h-14 w-full pl-4 rounded-lg"
+                          :class="title === 'projects' ? 'bg-gray-900 text-white' : 'text-gray-400 hover:bg-gray-700'"
+            >
                 <span class="sr-only">Projecten</span>
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">
@@ -25,8 +28,10 @@
                 <span class="ml-3">Projecten</span>
             </inertia-link>
 
-            <inertia-link href="#"
-                          class="text-gray-400 hover:bg-gray-700 flex flex-shrink-0 inline-flex items-center justify-left h-14 w-full pl-4 rounded-lg">
+            <inertia-link href="/tickets"
+                          class="flex flex-shrink-0 inline-flex items-center justify-left h-14 w-full pl-4 rounded-lg"
+                          :class="title === 'tickets' ? 'bg-gray-900 text-white' : 'text-gray-400 hover:bg-gray-700'"
+            >
                 <span class="sr-only">Tickets</span>
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">
@@ -36,8 +41,10 @@
                 <span class="ml-3">Tickets</span>
             </inertia-link>
 
-            <inertia-link href="#"
-                          class="text-gray-400 hover:bg-gray-700 flex flex-shrink-0 inline-flex items-center justify-left h-14 w-full pl-4 rounded-lg">
+            <inertia-link href="/invoices"
+                          class="flex flex-shrink-0 inline-flex items-center justify-left h-14 w-full pl-4 rounded-lg"
+                          :class="title === 'invoices' ? 'bg-gray-900 text-white' : 'text-gray-400 hover:bg-gray-700'"
+            >
                 <span class="sr-only">Facturen</span>
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">
@@ -47,8 +54,10 @@
                 <span class="ml-3">Facturen</span>
             </inertia-link>
 
-            <inertia-link href="#"
-                          class="text-gray-400 hover:bg-gray-700 flex flex-shrink-0 inline-flex items-center justify-left h-14 w-full pl-4 rounded-lg">
+            <inertia-link href="/academy"
+                          class="flex flex-shrink-0 inline-flex items-center justify-left h-14 w-full pl-4 rounded-lg"
+                          :class="title === 'academy' ? 'bg-gray-900 text-white' : 'text-gray-400 hover:bg-gray-700'"
+            >
                 <span class="sr-only">Academy</span>
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">
@@ -61,8 +70,10 @@
                 <span class="ml-3">Academy</span>
             </inertia-link>
 
-            <inertia-link href="#"
-                          class="text-gray-400 hover:bg-gray-700 flex flex-shrink-0 inline-flex items-center justify-left h-14 w-full pl-4 rounded-lg">
+            <inertia-link href="/settings"
+                          class="flex flex-shrink-0 inline-flex items-center justify-left h-14 w-full pl-4 rounded-lg"
+                          :class="title === 'settings' ? 'bg-gray-900 text-white' : 'text-gray-400 hover:bg-gray-700'"
+            >
                 <span class="sr-only">Instellingen</span>
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">
@@ -79,7 +90,7 @@
 
 <script>
 export default {
-    props: ['auth'],
+    props: ['auth', 'title'],
     components: {},
     data() {
         return {}

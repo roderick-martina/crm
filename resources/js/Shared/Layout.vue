@@ -1,6 +1,6 @@
 <template>
     <div
-        className="h-screen flex flex-row overflow-hidden bg-cool-gray font-sans"
+        class="h-screen overflow-hidden bg-gray-100 flex flex-col"
     >
         <slot />
     </div>
